@@ -1,0 +1,30 @@
+import cs101.sosgame.SOS;
+import javax.swing.*;
+import java.awt.*;
+
+public class SOSCanvas extends JPanel
+{
+   // properties 
+   SOS sos;
+   // constructors
+   public SOSCanvas(SOS sos)
+   {
+      this.sos = sos;
+   }
+   
+   // methods
+   public void paintComponent(Graphics g)
+   {
+      int x = sos.getDimension();
+      int y = sos.getDimension();
+      super.paintComponent(g);
+      
+      int start = 0;
+      
+      for(int i = 0; i <= 10; i++)
+      {
+         start = i * (x / 10);
+         g.drawLine(start, 0, start, y);
+      }
+   }
+}
